@@ -6,7 +6,6 @@ import sqlalchemy
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 import models
-
 class User(BaseModel):
      """Representation of a user """
 if models.storage_t == 'db':
@@ -22,3 +21,7 @@ else:
         password = ""
         first_name = ""
         last_name = ""
+        
+def __init__(self, *args, **kwargs):
+        """initializes user"""
+        super().__init__(*args, **kwargs)
